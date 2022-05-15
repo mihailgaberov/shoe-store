@@ -44,6 +44,8 @@ const products = [
 ];
 
 export default function App() {
+  const [size, setSize] = React.useState("");
+
   function renderProduct(p) {
     return (
       <div key={p.id} className="product">
@@ -63,7 +65,11 @@ export default function App() {
         <main>
           <section id="filters">
             <label htmlFor="size">Filter by Size:</label>{" "}
-            <select id="size">
+            <select
+              id="size"
+              value={size}
+              onChange={(e) => setSize(e.target.value)}
+            >
               <option value="">All sizes</option>
               <option value="7">7</option>
               <option value="8">8</option>
