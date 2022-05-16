@@ -10,7 +10,7 @@ export default function Detail() {
 
   if (loading) return <Spinner />;
 
-  if (error) return <PageNotFound />;
+  if (error) throw error;
 
   return (
     <div id="detail">
