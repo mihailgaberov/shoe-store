@@ -9,7 +9,7 @@ export default function Detail() {
   const { data: product, loading, error } = useFetch(`products/${id}`);
 
   if (loading) return <Spinner />;
-
+  if (!product) return <PageNotFound />;
   if (error) throw error;
 
   return (
