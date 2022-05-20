@@ -79,6 +79,16 @@
       "city": "Rincón de la Victoria",
       "country": "China",
       "id": 4
+    },
+    {
+      "city": "Rincón de la Victoria",
+      "country": "China",
+      "id": 5
+    },
+    {
+      "city": "Rincón de la Victoria",
+      "country": "India",
+      "id": 6
     }
   ]
 }
