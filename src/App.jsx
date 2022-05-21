@@ -8,6 +8,7 @@ import Detail from "./Detail";
 import Cart from "./Cart";
 import Checkout from "./Checkout";
 import cartReducer from "./cartReducer";
+import { CartContext } from "./cartContext";
 
 let initialCart;
 
@@ -24,7 +25,7 @@ export default function App() {
   useEffect(() => localStorage.setItem("cart", JSON.stringify(cart)), [cart]);
 
   return (
-    <>
+    <CartContext.Provider value={{ cart, dispatch }}>
       <div className="content">
         <Header />
         <main>
@@ -49,6 +50,6 @@ export default function App() {
         </main>
       </div>
       <Footer />
-    </>
+    </CartContext.Provider>
   );
 }
