@@ -40,3 +40,15 @@ export default function useFetch(url) {
 
   return { data, error, loading };
 }
+
+// // Render prop pattern
+// export function Fetch({ url, render }) {
+//   const { data, loading, error } = useFetch(url);
+//   return render(data, loading, error);
+// }
+
+// Function as child pattern
+export function Fetch({ url, children }) {
+  const { data, loading, error } = useFetch(url);
+  return children(data, loading, error);
+}
